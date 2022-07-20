@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import '../widgets/app_bar.dart';
 import '../widgets/side_menu.dart';
 
-class StackScreen extends StatelessWidget {
-  const StackScreen({Key? key, required this.path}) : super(key: key);
+class PartnershipScreen extends StatelessWidget {
+  const PartnershipScreen({Key? key, required this.path}) : super(key: key);
 
   final String path;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar('Stack screen'),
+      appBar: CustomAppBar('Partnership screen'),
       body: Center(
         child: Stack(
           children: [

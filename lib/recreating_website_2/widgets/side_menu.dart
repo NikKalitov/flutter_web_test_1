@@ -16,7 +16,7 @@ class CustomSideMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: mainWhiteColor,
+      color: greyMain,
       height: MediaQuery.of(context).size.height,
       child: SingleChildScrollView(
         controller: ScrollController(),
