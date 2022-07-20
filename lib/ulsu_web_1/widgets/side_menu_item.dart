@@ -3,7 +3,7 @@ import '../router.dart';
 import '../constants/sizes.dart';
 import '../constants/style.dart';
 
-class CustomSideMenuItem extends StatelessWidget {
+class CustomSideMenuItem extends StatefulWidget {
   const CustomSideMenuItem({
     Key? key,
     required this.icon,
@@ -18,48 +18,46 @@ class CustomSideMenuItem extends StatelessWidget {
   final bool isActive;
 
   @override
+  State<CustomSideMenuItem> createState() => _CustomSideMenuItemState();
+}
+
+class _CustomSideMenuItemState extends State<CustomSideMenuItem> {
+  bool isHovering = false;
+
+  @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        if (path != '') {
-          router.go(path);
+        if (widget.path != '') {
+          router.go(widget.path);
         }
       },
+      onHover: (value) {
+        setState(() {
+          isHovering = value;
+        });
+      },
       child: Container(
-        decoration: BoxDecoration(
-          // border: Border.all(color: sideMenuIconColor),
-          color: Colors.transparent,
-        ),
-        width: 200,
+        color: isHovering ? whiteSecondary : Colors.transparent,
+        width: sideMenuWidth.toDouble(),
         height: sideMenuItemHeight.toDouble(),
-        child: ListTile(
-          title: Text(text),
-          leading: Icon(
-            icon,
-            size: 20,
-            color: isActive ? mainBlueColor : sideMenuIconColor,
-          ),
+        child: Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+              child: Icon(
+                widget.icon,
+                size: 40,
+                color: widget.isActive ? mainBlueColor : sideMenuIconColor,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: Text(widget.text),
+            ),
+          ],
         ),
-        //   child: Row(
-        //     children: [
-        //       Icon(
-        //         icon,
-        //         size: 20,
-        //         color: isActive ? mainBlueColor : sideMenuIconColor,
-        //       ),
-        //       Text(text),
-        //     ],
-        //   ),
       ),
-
-      // child: ListTile(
-      //   title: Text(text),
-      //   leading: Icon(
-      //     icon,
-      //     size: 20,
-      //     color: isActive ? mainBlueColor : sideMenuIconColor,
-      //   ),
-      // ),
     );
   }
 }

@@ -13,50 +13,42 @@ final router = GoRouter(
       },
     ),
     GoRoute(
-      path: StackScreenRoute,
+      path: ProjectsScreenRoute,
       builder: (context, state) {
         return StackScreen(
-          path: StackScreenRoute,
+          path: ProjectsScreenRoute,
         );
       },
     ),
     GoRoute(
-      path: ServicesScreenRoute,
+      path: TeamsScreenRoute,
       builder: (context, state) {
         return ServicesScreen(
-          path: ServicesScreenRoute,
+          path: TeamsScreenRoute,
         );
       },
     ),
     GoRoute(
-      path: SchoolScreenRoute,
+      path: InterviewScreenRoute,
       builder: (context, state) {
         return SchoolsScreen(
-          path: SchoolScreenRoute,
+          path: InterviewScreenRoute,
         );
       },
     ),
     GoRoute(
-      path: PartnershipScreenRoute,
+      path: UsersScreenRoute,
       builder: (context, state) {
         return PartnershipScreen(
-          path: PartnershipScreenRoute,
+          path: UsersScreenRoute,
         );
       },
     ),
     GoRoute(
-      path: CareerScreenRoute,
+      path: DataScreenRoute,
       builder: (context, state) {
         return CareerScreen(
-          path: CareerScreenRoute,
-        );
-      },
-    ),
-    GoRoute(
-      path: ContactsScreenRoute,
-      builder: (context, state) {
-        return ContactsScreen(
-          path: ContactsScreenRoute,
+          path: DataScreenRoute,
         );
       },
     ),
