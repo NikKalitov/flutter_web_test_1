@@ -12,9 +12,7 @@ const Color greyMain = Color(0xFF929292); //цвет по умолчанию
 const Color greySecondary = Color(0xFF626262); //цвет при наведении
 const Color greyForBigText = Color(0xFF5b5b5b); //цвет большого текста
 
-///
 const Color mainBlueColor = Color(0xFF536dfe);
 const Color mainBackgroundColor = Color(0xFFf9f9f9);
 const Color sideMenuIconColor = Color(0xFF757575);
 const Color mainWhiteColor = Color(0xFFFFFFFF);
-///

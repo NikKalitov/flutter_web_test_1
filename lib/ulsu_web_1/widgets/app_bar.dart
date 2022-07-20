@@ -6,28 +6,54 @@ import '../constants/style.dart';
 
 AppBar CustomAppBar(String? title) {
   return AppBar(
-    title: Text(title ?? 'Empty title'),
+    title: AppBarDrawerIcon(),
     backgroundColor: mainBlueColor,
     toolbarHeight: appBarHeight.toDouble(),
     elevation: 0,
-    centerTitle: true,
-    actions: [
-      TextButton(
-        onPressed: () {},
-        child: Text(
-          'EN',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-          ),
-        ),
-      ),
-      IconButton(
-        onPressed: () {},
-        icon: Icon(
-          Icons.mode_night_outlined,
-        ),
-      ),
-    ],
+    actions: actionsForAppBar,
   );
 }
+
+class AppBarDrawerIcon extends StatelessWidget {
+  const AppBarDrawerIcon({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      onPressed: () {},
+      icon: Icon(Icons.menu),
+    );
+  }
+}
+
+List<Widget> actionsForAppBar = [
+  Row(
+    children: [
+      Padding(
+        padding: const EdgeInsets.only(right: 20.0),
+        child: IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.notifications),
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.only(right: 20.0),
+        child: IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.settings),
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.only(right: 20.0),
+        child: IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.person),
+        ),
+      ),
+      Padding(
+        padding: const EdgeInsets.only(right: 20.0),
+        child: Text('Константиновский\nКонстантин'),
+      ),
+    ],
+  )
+];

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import 'side_menu_item.dart';
 import '../routes.dart';
@@ -24,6 +26,7 @@ class CustomSideMenu extends StatelessWidget {
           height: listOfSideMenuItems().length * sideMenuItemHeight +
               appBarHeight.toDouble(),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.max,
             children: listOfSideMenuItems(),
           ),
@@ -32,8 +35,29 @@ class CustomSideMenu extends StatelessWidget {
     );
   }
 
-  List<CustomSideMenuItem> listOfSideMenuItems() {
-    List<CustomSideMenuItem> list = [
+  List<Widget> listOfSideMenuItems() {
+    List<Widget> list = [
+      Container(
+        margin: EdgeInsets.only(left: 10),
+        height: sideMenuItemHeight.toDouble(),
+        child: Row(
+          children: [
+            Icon(
+              Icons.circle_outlined,
+              color: mainBlueColor,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 10.0),
+              child: Text(
+                'R&D_ULSU',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       CustomSideMenuItem(
         icon: Icons.cases_rounded,
         path: MainScreenRoute,
